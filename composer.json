@@ -1,0 +1,14 @@
+{
+    "name": "supportpal/coding-standard",
+    "description": "SupportPal PHP coding standard.",
+    "type": "library",
+    "require": {
+        "slevomat/coding-standard": "^6.3"
+    },
+    "authors": [
+        {
+            "name": "Kieran Brahney",
+            "email": "kieran@supportpal.com"
+        }
+    ]
+}
