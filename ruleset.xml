@@ -87,7 +87,10 @@
     <!--
         DOCBLOCK rules.
      -->
-    <rule ref="SlevomatCodingStandard.TypeHints.ParameterTypeHint" />
+    <rule ref="SlevomatCodingStandard.TypeHints.ParameterTypeHint">
+        <!-- Prefer to be explicit. -->
+        <exclude name="SlevomatCodingStandard.TypeHints.ParameterTypeHint.UselessAnnotation" />
+    </rule>
 
     <rule ref="Zend.Files.ClosingTag" />
 </ruleset>
