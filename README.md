@@ -10,7 +10,7 @@ SupportPal PHPCS coding standard.
 
 ### Default ruleset
 
-`phpcs standard=../../vendor/supportpal/coding-standard .`
+`phpcs standard=vendor/supportpal/coding-standard .`
 
 ### Custom ruleset
 
