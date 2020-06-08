@@ -21,6 +21,6 @@ Create a `phpcs.xml` file:
 <ruleset name="CustomSupportPal">
     <description>Custom PHPCS config based on the SupportPal coding standard.</description>
 
-    <rule ref="../../vendor/supportpal/coding-standard" />
+    <rule ref="vendor/supportpal/coding-standard" />
 </ruleset>
 ```
