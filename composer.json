@@ -10,5 +10,11 @@
             "name": "Kieran Brahney",
             "email": "kieran@supportpal.com"
         }
-    ]
+    ],
+    "config": {
+        "preferred-install": "dist",
+        "secure-http": false,
+        "optimize-autoloader": true,
+        "sort-packages": true
+    }
 }
