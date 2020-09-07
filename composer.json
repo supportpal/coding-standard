@@ -2,6 +2,7 @@
     "name": "supportpal/coding-standard",
     "description": "SupportPal PHP coding standard.",
     "type": "library",
+    "license": "MIT",
     "require": {
         "slevomat/coding-standard": "^6.3"
     },
