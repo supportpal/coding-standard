@@ -58,6 +58,9 @@
     <rule ref="Squiz.Scope.StaticThisUsage"/>
 
     <rule ref="Squiz.WhiteSpace.CastSpacing"/>
+    
+    <!-- Forbid blank line after function opening brace -->
+    <rule ref="Squiz.WhiteSpace.FunctionOpeningBraceSpace"/>
 
     <rule ref="Squiz.WhiteSpace.LogicalOperatorSpacing"/>
     <rule ref="Squiz.WhiteSpace.OperatorSpacing">
