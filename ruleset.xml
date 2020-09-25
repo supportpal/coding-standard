@@ -61,6 +61,15 @@
     
     <!-- Forbid blank line after function opening brace -->
     <rule ref="Squiz.WhiteSpace.FunctionOpeningBraceSpace"/>
+    
+    <!-- Require 1 line before and after function, except at the top and bottom -->
+    <rule ref="Squiz.WhiteSpace.FunctionSpacing">
+        <properties>
+            <property name="spacing" value="1" />
+            <property name="spacingBeforeFirst" value="0"/>
+            <property name="spacingAfterLast" value="0"/>
+        </properties>
+    </rule>
 
     <rule ref="Squiz.WhiteSpace.LogicalOperatorSpacing"/>
     <rule ref="Squiz.WhiteSpace.OperatorSpacing">
