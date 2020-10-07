@@ -8,38 +8,10 @@
     <!-- https://github.com/slevomat/coding-standard - path relative to PHPCS -->
     <config name="installed_paths" value="../../slevomat/coding-standard"/>
 
-    <!-- Include the whole PSR-2 standard -->
+    <!--
+        PSR-2
+     -->
     <rule ref="PSR2"/>
-
-    <rule ref="Generic.PHP.Syntax"/>
-
-    <rule ref="Generic.Formatting.SpaceAfterNot" />
-
-    <rule ref="Generic.CodeAnalysis.EmptyStatement" />
-    <rule ref="Generic.CodeAnalysis.ForLoopShouldBeWhileLoop"/>
-    <rule ref="Generic.CodeAnalysis.JumbledIncrementer"/>
-
-    <rule ref="Generic.Files.ByteOrderMark"/>
-
-    <rule ref="Generic.Formatting.SpaceAfterCast"/>
-
-    <rule ref="Generic.Functions.CallTimePassByReference"/>
-
-    <rule ref="Generic.NamingConventions.ConstructorName">
-        <!-- Fairly buggy this sniff... -->
-        <exclude name="Generic.NamingConventions.ConstructorName.OldStyle"/>
-    </rule>
-    <rule ref="Generic.NamingConventions.UpperCaseConstantName"/>
-
-    <rule ref="Generic.PHP.DeprecatedFunctions"/>
-
-    <rule ref="Generic.WhiteSpace.DisallowTabIndent"/>
-
-    <rule ref="PEAR.Classes.ClassDeclaration"/>
-    <rule ref="PEAR.ControlStructures.MultiLineCondition">
-        <!-- Checks the indentation of multi-line IFs -->
-        <exclude name="PEAR.ControlStructures.MultiLineCondition.Alignment"/>
-    </rule>
 
     <rule ref="PSR2.Classes.ClassDeclaration"/>
     <rule ref="PSR2.Classes.PropertyDeclaration"/>
@@ -51,67 +23,31 @@
     <rule ref="PSR2.Namespaces.NamespaceDeclaration"/>
     <rule ref="PSR2.Namespaces.UseDeclaration"/>
 
-    <rule ref="Squiz.PHP.LowercasePHPFunctions"/>
-    <rule ref="Squiz.PHP.NonExecutableCode"/>
-
-    <rule ref="Squiz.Scope.MemberVarScope"/>
-    <rule ref="Squiz.Scope.StaticThisUsage"/>
-
-    <rule ref="Squiz.WhiteSpace.CastSpacing"/>
-    
-    <!-- Forbid blank line after function opening brace -->
-    <rule ref="Squiz.WhiteSpace.FunctionOpeningBraceSpace"/>
-    
-    <!-- Require 1 line before and after function, except at the top and bottom -->
-    <rule ref="Squiz.WhiteSpace.FunctionSpacing">
-        <properties>
-            <property name="spacing" value="1" />
-            <property name="spacingBeforeFirst" value="0"/>
-            <property name="spacingAfterLast" value="0"/>
-        </properties>
-    </rule>
-
-    <rule ref="Squiz.WhiteSpace.LogicalOperatorSpacing"/>
-    <rule ref="Squiz.WhiteSpace.OperatorSpacing">
-        <properties>
-            <property name="ignoreNewlines" value="true"/>
-        </properties>
-    </rule>
-    <rule ref="Squiz.WhiteSpace.SemicolonSpacing"/>
-
-    <rule ref="SlevomatCodingStandard.Namespaces.UnusedUses">
-        <properties>
-            <property name="searchAnnotations" value="true"/>
-            <property name="ignoredAnnotationNames" type="array">
-                <element key="@license" value="@license"/>
-                <element key="@version" value="@version"/>
-            </property>
-        </properties>
-    </rule>
-
-    <rule ref="SlevomatCodingStandard.PHP.UselessSemicolon" />
-    <rule ref="SlevomatCodingStandard.PHP.ShortList" />
-    <rule ref="SlevomatCodingStandard.Exceptions.DeadCatch" />
-    <rule ref="SlevomatCodingStandard.ControlStructures.NewWithoutParentheses" />
-
-    <!-- Require use statements to be alphabetically sorted -->
-    <rule ref="SlevomatCodingStandard.Namespaces.AlphabeticallySortedUses" />
-
-    <!-- Forbid group use declarations - https://www.php.net/manual/en/language.namespaces.importing.php -->
-    <rule ref="SlevomatCodingStandard.Namespaces.DisallowGroupUse" />
-
     <!--
-        DOCBLOCK rules.
+        Generics
      -->
-    <rule ref="SlevomatCodingStandard.TypeHints.ParameterTypeHint">
-        <!-- Prefer to be explicit. -->
-        <exclude name="SlevomatCodingStandard.TypeHints.ParameterTypeHint.UselessAnnotation" />
-    </rule>
-
-    <rule ref="Zend.Files.ClosingTag" />
+    <rule ref="Generic.CodeAnalysis.EmptyStatement" />
+    <rule ref="Generic.CodeAnalysis.ForLoopShouldBeWhileLoop"/>
+    <rule ref="Generic.CodeAnalysis.JumbledIncrementer"/>
 
     <!-- Forbid final methods in final classes -->
     <rule ref="Generic.CodeAnalysis.UnnecessaryFinalModifier"/>
+
+    <rule ref="Generic.Files.ByteOrderMark"/>
+
+    <rule ref="Generic.Formatting.SpaceAfterNot" />
+    <rule ref="Generic.Formatting.SpaceAfterCast"/>
+
+    <rule ref="Generic.Functions.CallTimePassByReference"/>
+
+    <rule ref="Generic.NamingConventions.ConstructorName">
+        <!-- Fairly buggy this sniff... -->
+        <exclude name="Generic.NamingConventions.ConstructorName.OldStyle"/>
+    </rule>
+    <rule ref="Generic.NamingConventions.UpperCaseConstantName"/>
+
+    <rule ref="Generic.PHP.Syntax"/>
+    <rule ref="Generic.PHP.DeprecatedFunctions"/>
 
     <!-- Forbid alias functions, i.e. `sizeof()`, `delete()` -->
     <rule ref="Generic.PHP.ForbiddenFunctions">
@@ -142,17 +78,101 @@
         </properties>
     </rule>
 
-    <!-- Forbid prefix and suffix "Abstract" for abstract classes -->
-    <rule ref="SlevomatCodingStandard.Classes.SuperfluousAbstractClassNaming"/>
+    <rule ref="Generic.WhiteSpace.DisallowTabIndent"/>
 
-    <!-- Forbid prefix and suffix "Interface" for interfaces -->
-    <rule ref="SlevomatCodingStandard.Classes.SuperfluousInterfaceNaming"/>
+    <!--
+        PEAR
+     -->
+    <rule ref="PEAR.Classes.ClassDeclaration"/>
+    <rule ref="PEAR.ControlStructures.MultiLineCondition">
+        <!-- Checks the indentation of multi-line IFs -->
+        <exclude name="PEAR.ControlStructures.MultiLineCondition.Alignment"/>
+    </rule>
+
+    <!--
+        Squiz
+     -->
+    <rule ref="Squiz.Scope.MemberVarScope"/>
+    <rule ref="Squiz.Scope.StaticThisUsage"/>
 
     <!-- Forbid strings in `"` unless necessary -->
     <rule ref="Squiz.Strings.DoubleQuoteUsage"/>
     <rule ref="Squiz.Strings.DoubleQuoteUsage.ContainsVar">
         <message>Variable "%s" not allowed in double quoted string; use sprintf() or concatenation instead</message>
     </rule>
+
+    <rule ref="Squiz.PHP.LowercasePHPFunctions"/>
+    <rule ref="Squiz.PHP.NonExecutableCode"/>
+
+    <rule ref="Squiz.WhiteSpace.CastSpacing"/>
+    
+    <!-- Forbid blank line after function opening brace -->
+    <rule ref="Squiz.WhiteSpace.FunctionOpeningBraceSpace"/>
+    
+    <!-- Require 1 line before and after function, except at the top and bottom -->
+    <rule ref="Squiz.WhiteSpace.FunctionSpacing">
+        <properties>
+            <property name="spacing" value="1" />
+            <property name="spacingBeforeFirst" value="0"/>
+            <property name="spacingAfterLast" value="0"/>
+        </properties>
+    </rule>
+
+    <rule ref="Squiz.WhiteSpace.LogicalOperatorSpacing"/>
+    <rule ref="Squiz.WhiteSpace.OperatorSpacing">
+        <properties>
+            <property name="ignoreNewlines" value="true"/>
+        </properties>
+    </rule>
+    <rule ref="Squiz.WhiteSpace.SemicolonSpacing"/>
+
+    <!-- Require space after language constructs e.g. echo, print, new, require, etc -->
+    <rule ref="Squiz.WhiteSpace.LanguageConstructSpacing"/>
+
+    <!-- Forbid superfluous whitespaces -->
+    <rule ref="Squiz.WhiteSpace.SuperfluousWhitespace">
+        <properties>
+            <property name="ignoreBlankLines" value="false"/>
+        </properties>
+    </rule>
+
+    <!--
+        SlevomatCodingStandard
+     -->
+    <rule ref="SlevomatCodingStandard.Namespaces.UnusedUses">
+        <properties>
+            <property name="searchAnnotations" value="true"/>
+            <property name="ignoredAnnotationNames" type="array">
+                <element key="@license" value="@license"/>
+                <element key="@version" value="@version"/>
+            </property>
+        </properties>
+    </rule>
+
+    <rule ref="SlevomatCodingStandard.PHP.UselessSemicolon" />
+    <rule ref="SlevomatCodingStandard.PHP.ShortList" />
+    <rule ref="SlevomatCodingStandard.Exceptions.DeadCatch" />
+    <rule ref="SlevomatCodingStandard.ControlStructures.NewWithoutParentheses" />
+
+    <!-- Require use statements to be alphabetically sorted -->
+    <rule ref="SlevomatCodingStandard.Namespaces.AlphabeticallySortedUses" />
+
+    <!-- Forbid group use declarations - https://www.php.net/manual/en/language.namespaces.importing.php -->
+    <rule ref="SlevomatCodingStandard.Namespaces.DisallowGroupUse" />
+
+    <!--
+        DOCBLOCK rules.
+     -->
+    <rule ref="SlevomatCodingStandard.TypeHints.ParameterTypeHint">
+        <!-- Prefer to be explicit. -->
+        <exclude name="SlevomatCodingStandard.TypeHints.ParameterTypeHint.UselessAnnotation" />
+    </rule>
+
+    <!-- Forbid prefix and suffix "Abstract" for abstract classes -->
+    <rule ref="SlevomatCodingStandard.Classes.SuperfluousAbstractClassNaming"/>
+
+    <!-- Forbid prefix and suffix "Interface" for interfaces -->
+    <rule ref="SlevomatCodingStandard.Classes.SuperfluousInterfaceNaming"/>
 
     <!-- Forbid useless parentheses -->
     <rule ref="SlevomatCodingStandard.PHP.UselessParentheses"/>
@@ -224,14 +244,9 @@
     <!-- Forbid fancy yoda conditions -->
     <rule ref="SlevomatCodingStandard.ControlStructures.DisallowYodaComparison"/>
 
-    <!-- Require space after language constructs e.g. echo, print, new, require, etc -->
-    <rule ref="Squiz.WhiteSpace.LanguageConstructSpacing"/>
-
-    <!-- Forbid superfluous whitespaces -->
-    <rule ref="Squiz.WhiteSpace.SuperfluousWhitespace">
-        <properties>
-            <property name="ignoreBlankLines" value="false"/>
-        </properties>
-    </rule>
+    <!--
+        Zend
+     -->
+    <rule ref="Zend.Files.ClosingTag" />
 </ruleset>
 
