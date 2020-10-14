@@ -247,6 +247,27 @@
     <!-- Forbid fancy yoda conditions -->
     <rule ref="SlevomatCodingStandard.ControlStructures.DisallowYodaComparison"/>
 
+    <!-- Forbid weak comparisons -->
+    <rule ref="SlevomatCodingStandard.Operators.DisallowEqualOperators"/>
+
+    <!-- Require usage of early exit -->
+    <rule ref="SlevomatCodingStandard.ControlStructures.EarlyExit"/>
+
+    <!-- Report invalid format of inline phpDocs with @var -->
+    <rule ref="SlevomatCodingStandard.Commenting.InlineDocCommentDeclaration"/>
+
+    <!-- Require comments with single line written as one-liners -->
+    <rule ref="SlevomatCodingStandard.Commenting.RequireOneLinePropertyDocComment"/>
+
+    <!-- Require presence of declare(strict_types=1) -->
+    <rule ref="SlevomatCodingStandard.TypeHints.DeclareStrictTypes">
+        <properties>
+            <property name="newlinesCountBetweenOpenTagAndDeclare" value="0"/>
+            <property name="spacesCountAroundEqualsSign" value="0"/>
+            <property name="newlinesCountAfterDeclare" value="2"/>
+        </properties>
+    </rule>
+
     <!--
         Zend
      -->
