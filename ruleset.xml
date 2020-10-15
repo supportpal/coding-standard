@@ -142,63 +142,6 @@
     <!--
         SlevomatCodingStandard
      -->
-    <rule ref="SlevomatCodingStandard.Namespaces.UnusedUses">
-        <properties>
-            <property name="searchAnnotations" value="true"/>
-            <property name="ignoredAnnotationNames" type="array">
-                <element key="@license" value="@license"/>
-                <element key="@version" value="@version"/>
-            </property>
-        </properties>
-    </rule>
-
-    <rule ref="SlevomatCodingStandard.PHP.UselessSemicolon" />
-    <rule ref="SlevomatCodingStandard.PHP.ShortList" />
-    <rule ref="SlevomatCodingStandard.Exceptions.DeadCatch" />
-    <rule ref="SlevomatCodingStandard.ControlStructures.NewWithoutParentheses" />
-
-    <!-- Require use statements to be alphabetically sorted -->
-    <rule ref="SlevomatCodingStandard.Namespaces.AlphabeticallySortedUses" />
-
-    <!-- Forbid group use declarations - https://www.php.net/manual/en/language.namespaces.importing.php -->
-    <rule ref="SlevomatCodingStandard.Namespaces.DisallowGroupUse" />
-
-    <!--
-        DOCBLOCK rules.
-     -->
-    <rule ref="SlevomatCodingStandard.TypeHints.ParameterTypeHint">
-        <!-- Prefer to be explicit. -->
-        <exclude name="SlevomatCodingStandard.TypeHints.ParameterTypeHint.UselessAnnotation" />
-    </rule>
-
-    <!-- Forbid prefix and suffix "Abstract" for abstract classes -->
-    <rule ref="SlevomatCodingStandard.Classes.SuperfluousAbstractClassNaming"/>
-
-    <!-- Forbid prefix and suffix "Interface" for interfaces -->
-    <rule ref="SlevomatCodingStandard.Classes.SuperfluousInterfaceNaming"/>
-
-    <!-- Forbid useless parentheses -->
-    <rule ref="SlevomatCodingStandard.PHP.UselessParentheses"/>
-
-    <!-- Forbid useless alias for classes, constants and functions -->
-    <rule ref="SlevomatCodingStandard.Namespaces.UselessAlias"/>
-
-    <!-- Forbid superfluous leading backslash in use statements -->
-    <rule ref="SlevomatCodingStandard.Namespaces.UseDoesNotStartWithBackslash"/>
-    <!-- Forbid useless uses of the same namespace -->
-    <rule ref="SlevomatCodingStandard.Namespaces.UseFromSameNamespace"/>
-
-    <!-- Forbid multiple use statements on same line -->
-    <rule ref="SlevomatCodingStandard.Namespaces.MultipleUsesPerLine"/>
-
-    <!-- Require language constructs without parentheses -->
-    <rule ref="SlevomatCodingStandard.ControlStructures.LanguageConstructWithParentheses"/>
-
-    <!-- Forbid usage of conditions when a simple return can be used -->
-    <rule ref="SlevomatCodingStandard.ControlStructures.UselessIfConditionWithReturn"/>
-
-    <!-- Forbid usage of boolean-only ternary operator usage (e.g. $foo ? true : false) -->
-    <rule ref="SlevomatCodingStandard.ControlStructures.UselessTernaryOperator"/>
 
     <!-- Require consistent spacing for block structures -->
     <rule ref="SlevomatCodingStandard.ControlStructures.BlockControlStructureSpacing">
@@ -217,7 +160,10 @@
             </property>
         </properties>
     </rule>
-
+    <!-- Forbid fancy yoda conditions -->
+    <rule ref="SlevomatCodingStandard.ControlStructures.DisallowYodaComparison"/>
+    <!-- Require usage of early exit -->
+    <rule ref="SlevomatCodingStandard.ControlStructures.EarlyExit"/>
     <!-- Require consistent spacing for jump statements -->
     <rule ref="SlevomatCodingStandard.ControlStructures.JumpStatementsSpacing">
         <properties>
@@ -232,6 +178,14 @@
             </property>
         </properties>
     </rule>
+    <!-- Require language constructs without parentheses -->
+    <rule ref="SlevomatCodingStandard.ControlStructures.LanguageConstructWithParentheses"/>
+    <!-- Require new instance without useless parantheses -->
+    <rule ref="SlevomatCodingStandard.ControlStructures.NewWithoutParentheses" />
+    <!-- Forbid usage of conditions when a simple return can be used -->
+    <rule ref="SlevomatCodingStandard.ControlStructures.UselessIfConditionWithReturn"/>
+    <!-- Forbid usage of boolean-only ternary operator usage (e.g. $foo ? true : false) -->
+    <rule ref="SlevomatCodingStandard.ControlStructures.UselessTernaryOperator"/>
 
     <!-- Forbid empty lines around type declarations -->
     <rule ref="SlevomatCodingStandard.Classes.EmptyLinesAroundClassBraces">
@@ -240,24 +194,53 @@
             <property name="linesCountBeforeClosingBrace" value="0"/>
         </properties>
     </rule>
-
+    <!-- Forbid prefix and suffix "Abstract" for abstract classes -->
+    <rule ref="SlevomatCodingStandard.Classes.SuperfluousAbstractClassNaming"/>
+    <!-- Forbid prefix and suffix "Interface" for interfaces -->
+    <rule ref="SlevomatCodingStandard.Classes.SuperfluousInterfaceNaming"/>
     <!-- Forbid dead code -->
     <rule ref="SlevomatCodingStandard.Classes.UnusedPrivateElements"/>
 
-    <!-- Forbid fancy yoda conditions -->
-    <rule ref="SlevomatCodingStandard.ControlStructures.DisallowYodaComparison"/>
+    <!-- Report invalid format of inline phpDocs with @var -->
+    <rule ref="SlevomatCodingStandard.Commenting.InlineDocCommentDeclaration"/>
+    <!-- Require comments with single line written as one-liners -->
+    <rule ref="SlevomatCodingStandard.Commenting.RequireOneLinePropertyDocComment"/>
+
+    <!-- Prevent empty catch blocks -->
+    <rule ref="SlevomatCodingStandard.Exceptions.DeadCatch" />
+
+    <!-- Require use statements to be alphabetically sorted -->
+    <rule ref="SlevomatCodingStandard.Namespaces.AlphabeticallySortedUses" />
+    <!-- Forbid group use declarations - https://www.php.net/manual/en/language.namespaces.importing.php -->
+    <rule ref="SlevomatCodingStandard.Namespaces.DisallowGroupUse" />
+    <!-- Forbid multiple use statements on same line -->
+    <rule ref="SlevomatCodingStandard.Namespaces.MultipleUsesPerLine"/>
+    <!-- Forbid superfluous leading backslash in use statements -->
+    <rule ref="SlevomatCodingStandard.Namespaces.UseDoesNotStartWithBackslash"/>
+    <!-- Forbid useless uses of the same namespace -->
+    <rule ref="SlevomatCodingStandard.Namespaces.UseFromSameNamespace"/>
+    <!-- Forbid useless alias for classes, constants and functions -->
+    <rule ref="SlevomatCodingStandard.Namespaces.UselessAlias"/>
+    <!-- Prevent unused use statements -->
+    <rule ref="SlevomatCodingStandard.Namespaces.UnusedUses">
+        <properties>
+            <property name="searchAnnotations" value="true"/>
+            <property name="ignoredAnnotationNames" type="array">
+                <element key="@license" value="@license"/>
+                <element key="@version" value="@version"/>
+            </property>
+        </properties>
+    </rule>
 
     <!-- Forbid weak comparisons -->
     <rule ref="SlevomatCodingStandard.Operators.DisallowEqualOperators"/>
 
-    <!-- Require usage of early exit -->
-    <rule ref="SlevomatCodingStandard.ControlStructures.EarlyExit"/>
-
-    <!-- Report invalid format of inline phpDocs with @var -->
-    <rule ref="SlevomatCodingStandard.Commenting.InlineDocCommentDeclaration"/>
-
-    <!-- Require comments with single line written as one-liners -->
-    <rule ref="SlevomatCodingStandard.Commenting.RequireOneLinePropertyDocComment"/>
+    <!-- Require [] syntax instead of list() -->
+    <rule ref="SlevomatCodingStandard.PHP.ShortList" />
+    <!-- Forbid useless semicolon `;` -->
+    <rule ref="SlevomatCodingStandard.PHP.UselessSemicolon" />
+    <!-- Forbid useless parentheses -->
+    <rule ref="SlevomatCodingStandard.PHP.UselessParentheses"/>
 
     <!-- Require presence of declare(strict_types=1) -->
     <rule ref="SlevomatCodingStandard.TypeHints.DeclareStrictTypes">
@@ -266,6 +249,11 @@
             <property name="spacesCountAroundEqualsSign" value="0"/>
             <property name="newlinesCountAfterDeclare" value="2"/>
         </properties>
+    </rule>
+    <!-- Require types to be written natively if possible -->
+    <rule ref="SlevomatCodingStandard.TypeHints.ParameterTypeHint">
+        <!-- Prefer to be explicit. -->
+        <exclude name="SlevomatCodingStandard.TypeHints.ParameterTypeHint.UselessAnnotation" />
     </rule>
 
     <!--
