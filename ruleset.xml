@@ -279,6 +279,8 @@
             <property name="newlinesCountAfterDeclare" value="2"/>
         </properties>
     </rule>
+    <!-- Require ? symbol on nullable parameters -->
+    <rule ref="SlevomatCodingStandard.TypeHints.NullableTypeForNullDefaultValue" />
     <!-- Require types to be written natively if possible -->
     <rule ref="SlevomatCodingStandard.TypeHints.ParameterTypeHint">
         <!-- Prefer to be explicit. -->
