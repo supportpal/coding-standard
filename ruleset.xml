@@ -274,7 +274,7 @@
         <properties>
             <property name="declareOnFirstLine" value="true"/>
             <property name="spacesCountAroundEqualsSign" value="0"/>
-            <property name="linesCountAfterDeclare" value="2"/>
+            <property name="linesCountAfterDeclare" value="1"/>
         </properties>
     </rule>
     <!-- Require ? symbol on nullable parameters -->
