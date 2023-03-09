@@ -181,7 +181,7 @@
                 <element value="return" />
                 <element value="throw" />
                 <element value="yield" />
-                <element value="yield from" />
+                <element value="yield_from" />
             </property>
         </properties>
     </rule>
