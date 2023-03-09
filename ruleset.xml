@@ -155,15 +155,15 @@
         <exclude name="SlevomatCodingStandard.ControlStructures.BlockControlStructureSpacing.IncorrectLinesCountBeforeControlStructure" />
         <exclude name="SlevomatCodingStandard.ControlStructures.BlockControlStructureSpacing.IncorrectLinesCountBeforeFirstControlStructure" />
         <properties>
-            <property name="tokensToCheck" type="array">
-                <element value="T_IF" />
-                <element value="T_DO" />
-                <element value="T_WHILE" />
-                <element value="T_FOR" />
-                <element value="T_FOREACH" />
-                <element value="T_SWITCH" />
-                <element value="T_TRY" />
-                <element value="T_DEFAULT" />
+            <property name="controlStructures" type="array">
+                <element value="if" />
+                <element value="do" />
+                <element value="while" />
+                <element value="for" />
+                <element value="foreach" />
+                <element value="switch" />
+                <element value="try" />
+                <element value="default" />
             </property>
         </properties>
     </rule>
@@ -177,11 +177,11 @@
             <property name="linesCountBeforeWhenFirstInCaseOrDefault" value="0"/>
             <property name="linesCountAfterWhenLastInCaseOrDefault" value="1"/>
             <property name="linesCountAfterWhenLastInLastCaseOrDefault" value="0"/>
-            <property name="tokensToCheck" type="array">
-                <element value="T_RETURN" />
-                <element value="T_THROW" />
-                <element value="T_YIELD" />
-                <element value="T_YIELD_FROM" />
+            <property name="jumpStatements" type="array">
+                <element value="return" />
+                <element value="throw" />
+                <element value="yield" />
+                <element value="yield from" />
             </property>
         </properties>
     </rule>
@@ -205,8 +205,6 @@
     <rule ref="SlevomatCodingStandard.Classes.SuperfluousAbstractClassNaming"/>
     <!-- Forbid prefix and suffix "Interface" for interfaces -->
     <rule ref="SlevomatCodingStandard.Classes.SuperfluousInterfaceNaming"/>
-    <!-- Forbid dead code -->
-    <rule ref="SlevomatCodingStandard.Classes.UnusedPrivateElements"/>
 
     <!-- Report invalid format of inline phpDocs with @var -->
     <rule ref="SlevomatCodingStandard.Commenting.InlineDocCommentDeclaration"/>
@@ -274,9 +272,9 @@
     <!-- Require presence of declare(strict_types=1) -->
     <rule ref="SlevomatCodingStandard.TypeHints.DeclareStrictTypes">
         <properties>
-            <property name="newlinesCountBetweenOpenTagAndDeclare" value="0"/>
+            <property name="declareOnFirstLine" value="true"/>
             <property name="spacesCountAroundEqualsSign" value="0"/>
-            <property name="newlinesCountAfterDeclare" value="2"/>
+            <property name="linesCountAfterDeclare" value="2"/>
         </properties>
     </rule>
     <!-- Require ? symbol on nullable parameters -->
