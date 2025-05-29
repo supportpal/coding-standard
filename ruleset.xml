@@ -45,8 +45,6 @@
     <rule ref="Generic.Formatting.SpaceAfterNot" />
     <rule ref="Generic.Formatting.SpaceAfterCast"/>
 
-    <rule ref="Generic.Functions.CallTimePassByReference"/>
-
     <rule ref="Generic.NamingConventions.ConstructorName">
         <!-- Fairly buggy this sniff... -->
         <exclude name="Generic.NamingConventions.ConstructorName.OldStyle"/>
@@ -137,7 +135,7 @@
     <rule ref="Squiz.WhiteSpace.SemicolonSpacing"/>
 
     <!-- Require space after language constructs e.g. echo, print, new, require, etc -->
-    <rule ref="Squiz.WhiteSpace.LanguageConstructSpacing"/>
+    <rule ref="Generic.WhiteSpace.LanguageConstructSpacing"/>
 
     <!-- Forbid superfluous whitespaces -->
     <rule ref="Squiz.WhiteSpace.SuperfluousWhitespace">

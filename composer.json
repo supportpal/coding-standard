@@ -4,7 +4,8 @@
     "type": "library",
     "license": "MIT",
     "require": {
-        "slevomat/coding-standard": "^8.0"
+        "slevomat/coding-standard": "^8.0",
+        "squizlabs/php_codesniffer": "^3.12.1"
     },
     "authors": [
         {
@@ -16,6 +17,12 @@
         "preferred-install": "dist",
         "secure-http": false,
         "optimize-autoloader": true,
-        "sort-packages": true
+        "sort-packages": true,
+        "allow-plugins": {
+            "dealerdirect/phpcodesniffer-composer-installer": false
+        }
+    },
+    "require-dev": {
+        "phpcompatibility/php-compatibility": "^9.3"
     }
 }
